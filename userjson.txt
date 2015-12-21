@@ -10,7 +10,7 @@
 	"password": 578tufig7273gf2736efg2376fg72364gf2374fg2374fg4f2g, //encrypted
 	"clubs": [
 		{"organization": "TC ROBERSON", "color": "0x345234"}
-		{"organization": "YMCA Piranhas", "color": "0x234123"}	
+		{"organization": "YMCA Piranhas", "color": "0x234123"}
 	],
 	"meets": [
 		{"id": 1241223412341243, "date": "2010-03-04", "name": "USRY", "permission": "swimmer"},
@@ -35,19 +35,19 @@
 
 	],
 	"times": [
-		{ 
+		{
 			"event": "50 Yard Freestyle",
 			"performances": [
-				{"date": "2010-01-04", "organization": "TC ROBERSON", "standard": "A", "time": "PT25.33S"},
-				{"date": "2010-03-04", "organization": "YMCA Piranhas", "standard": "BB", "time": "PT26.54"}
-			] 
+				{"date": "2010-01-04", "organizationId": "124123421341234", "standard": "A", "time": "PT25.33S"},
+				{"date": "2010-03-04", "organizationId": "432523452345324", "standard": "BB", "time": "PT26.54"}
+			]
 		},
-		{ 
+		{
 			"event": "100 Yard Freestyle",
 			"performances": [
-				{"date": "2010-01-04", "organization": "TC ROBERSON", "standard": "A", "time": "PT53.33S"},
-				{"date": "2010-03-04", "organization": "YMCA Piranhas", "standard": "BB", "time": "PT55.54"}
-			] 
+				{"date": "2010-01-04", "organization": "124123421341234", "standard": "A", "time": "PT53.33S"},
+				{"date": "2010-03-04", "organization": "432523452345324", "standard": "BB", "time": "PT55.54"}
+			]
 		}
-	]	
+	]
 }

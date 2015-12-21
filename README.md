@@ -41,5 +41,21 @@ I am not sure if the above works or not; still messing around with that.
 
 The server currently listens on port 3000 for connections.
 
+##Routes
+####/users
+1. / - POST
+2. /auth - POST
+3. /username/:username - GET, DELETE
+4. /:username/clubs - POST, DELETE
+5. /:username/meets - POST, DELETE
+6. /:username/times - POST, DELETE
+7. /:username/goals - POST, DELETE
+8. /:username/sets - POST, DELETE
+
+
+####/meets
+1. / - POST
+
+
 ##Author
 Leo Asher - repository owner

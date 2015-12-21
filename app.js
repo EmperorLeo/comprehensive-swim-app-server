@@ -15,6 +15,7 @@ mongoose.connect('mongodb://localhost:27017/comprehensive-swim-app-server');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var meets = require('./routes/meets')
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/meets', meets);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
