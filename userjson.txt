@@ -1,0 +1,52 @@
+//Times, dates, duration listed in ISO 6801
+
+{
+	"_id": "23452345234645634563456345634563456",
+	"firstName": "Leo",
+	"lastName": "Feldman",
+	“userName”: “leofeldman”,
+	"birthday": "1994-06-08",
+	"email": "laf22@duke.edu",
+	"password": 578tufig7273gf2736efg2376fg72364gf2374fg2374fg4f2g, //encrypted
+	"clubs": [
+		{"organization": "TC ROBERSON", "color": "0x345234"}
+		{"organization": "YMCA Piranhas", "color": "0x234123"}	
+	],
+	"meets": [
+		{"id": 1241223412341243, "date": "2010-03-04", "name": "USRY", "permission": "swimmer"},
+		{"id": 1243123212341243, "date": "2010-05-31", "name": "HULA", "permission": "timer"},
+		{"id": 1243123412341243, "date": "2010-06-04", "name": "YSSC", "permission": "swimmer"},
+		{"id": 1243123412354243, "date": "2010-07-04", "name": "Leo's Meet", "permission": "admin"}
+	],
+	"goals": [
+		{"meetId": 1241223412341243, "event": "Boys 15-16 200 Yard Freestyle", “goalType”: "time", “goal”: "PT1M53.55S"},
+		{"meetId": 1243123412341243, "event": "Boys 15-16 400 Meter IM", "goalType": "string", "goal": "I want to go fast."}
+	],
+	"sets": [
+		{
+			"date": "2010-07-05",
+			"name" : "The death set of death",
+		 	"workout": [
+				{"repetitions": 10, "distance": 100, "stroke": "freestyle/backstroke/freestyle/backstroke", "interval": "PT1M20S"},
+				{"repetitions": 20, "distance": 100, "stroke": "freestyle kick", "interval": "PT1M30S"},
+				{"repetitions": 10, "distance": 400, "stroke": "IM", "interval": "PT5M30S"},
+			]
+
+	],
+	"times": [
+		{ 
+			"event": "50 Yard Freestyle",
+			"performances": [
+				{"date": "2010-01-04", "organization": "TC ROBERSON", "standard": "A", "time": "PT25.33S"},
+				{"date": "2010-03-04", "organization": "YMCA Piranhas", "standard": "BB", "time": "PT26.54"}
+			] 
+		},
+		{ 
+			"event": "100 Yard Freestyle",
+			"performances": [
+				{"date": "2010-01-04", "organization": "TC ROBERSON", "standard": "A", "time": "PT53.33S"},
+				{"date": "2010-03-04", "organization": "YMCA Piranhas", "standard": "BB", "time": "PT55.54"}
+			] 
+		}
+	]	
+}
