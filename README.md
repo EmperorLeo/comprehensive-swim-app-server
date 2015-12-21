@@ -6,7 +6,7 @@ This is the server side code for a yet to be named swim app.
 
 Next, place the unzipped file somewhere acceptable.
 
-Cd into that directory, cd into it's bin folder, and type <pre><code>./mongod --dbpath <PATH_TO_DATA></code></pre>
+Cd into that directory, cd into it's bin folder, and type <pre><code>./mongod --dbpath \<PATH_TO_DATA\></code></pre>
 
 This should make it listen on port 27017.
 
