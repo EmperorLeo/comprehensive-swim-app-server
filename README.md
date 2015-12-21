@@ -6,7 +6,7 @@ To install mongoDB (the database), obviously install it from [here](https://www.
 
 Next, place the unzipped file somewhere acceptable.
 
-Cd into that directory, cd into it's bin folder, and type <pre><code>./mongod --dbpath <PATH_TO_DATA></code></pre>
+Cd into that directory, cd into it's bin folder, and type <pre><code>./mongod --dbpath \<PATH_TO_DATA\></code></pre>
 
 This should make it listen on port 27017.
 
