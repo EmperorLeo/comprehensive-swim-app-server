@@ -31,6 +31,7 @@
 				{"repetitions": 20, "distance": 100, "stroke": "freestyle kick", "interval": "PT1M30S"},
 				{"repetitions": 10, "distance": 400, "stroke": "IM", "interval": "PT5M30S"},
 			]
+		}
 
 	],
 	"times": [
