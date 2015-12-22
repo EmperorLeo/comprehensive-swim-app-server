@@ -32,7 +32,44 @@ router.post('/', function(req, res, next) {
 		}
 
   });
-}
+});
 
+router.get('/', function(req, res, next) {
+  Meet.find(function(err, meets) {
+    if(err) {
+      res.writeHead(400, {"Content-Type": "text/plain"});
+			res.end("Could not retrieve meets");
+    } else {
+      res.json(meets);
+    }
+  });
+});
+
+router.get('/meetId/:meetId', function(req, res, next) {
+    Meet.findOne({_id: req.params.meetId}, function(err, meet) {
+      if(meet) {
+        res.json(meet);
+      } else {
+        console.log(err);
+        res.writeHead(400, {"Content-Type": "application/json"});
+        res.end(JSON.stringify({"success": false}));
+      }
+    });
+});
+
+router.delete('/meetId/:meetId', function(req, res, next) {
+  Meet.remove({_id: req.params.meetId}, function(err) {
+
+    if(err) {
+      console.log(err);
+      res.writeHead(400, {"Content-Type": "application/json"});
+      res.end(JSON.stringify({"deleted": false}));
+    } else {
+      res.statusCode = 204;
+      res.end();
+    }
+
+  });
+});
 
 module.exports = router;

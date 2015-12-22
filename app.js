@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/comprehensive-swim-app-server');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var meets = require('./routes/meets')
+var meets = require('./routes/meets');
 
 var app = express();
 
