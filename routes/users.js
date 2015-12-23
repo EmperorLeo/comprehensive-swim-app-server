@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
 var User = require('../models/user.js');
-
+var web_token = require('jsonwebtoken');
+var tokenFunc = require('../jwtdecrypt.js');
+var config = require('../config.js');
 
 var notFound = function(response) {
 
@@ -67,7 +69,14 @@ router.post('/auth', function(req, res, next) {
 
 			if(match) {
 				res.writeHead(200, {"Content-Type": "application/json"});
-				res.end(JSON.stringify({"authorized":true, "token":"NOT_IMPLEMENTED"}));
+
+
+				var token = web_token.sign(user, config.secret, {
+					expiresIn: "7d"
+				});
+
+
+				res.end(JSON.stringify({"authorized":true, "token":token}));
 			} else {
 				res.writeHead(403, {"Content-Type": "application/json"});
 				res.end(JSON.stringify({"authorized":false}));
@@ -83,6 +92,8 @@ router.post('/auth', function(req, res, next) {
 	});
 
 });
+
+router.use(tokenFunc);
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

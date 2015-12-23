@@ -13,8 +13,10 @@ mongoose.connect('mongodb://localhost:27017/comprehensive-swim-app-server');
 // var monk = require('monk');
 // var db = monk('localhost:27017/comprehensive-swim-app-server');
 
+var config = require('./config.js');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var tokenFunc = require('./jwtdecrypt.js');
 var meets = require('./routes/meets');
 
 var app = express();
@@ -22,6 +24,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.set('tokenSecret', config.secret);
 
 // Make our db accessible to our router
 // app.use(function(req,res,next){
@@ -39,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use(tokenFunc);
 app.use('/meets', meets);
 
 // catch 404 and forward to error handler

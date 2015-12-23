@@ -4,7 +4,7 @@ var mongoose = require("mongoose"),
 var meetSchema = new Schema({
 
 	name: {type: String, required: true},
-	dates: {type: [Date], required: true},
+	dates: {type: [Date]},
 	country: {type: String, required: true},
 	state: {type: String},
 	city: {type: String, required: true},
