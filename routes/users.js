@@ -24,8 +24,10 @@ router.post('/', function(req, res, next) {
 	user.birthday = req.body.birthday;
 	user.email = req.body.email;
 
-	var salt = bcrypt.genSaltSync(10);
-	user.password = bcrypt.hashSync(req.body.password, salt);
+	if(req.body.password) {
+		var salt = bcrypt.genSaltSync(10);
+		user.password = bcrypt.hashSync(req.body.password, salt);
+	}
 
 	user.clubs = [];
 	user.meets = [];
@@ -37,7 +39,7 @@ router.post('/', function(req, res, next) {
 
 		if(err) {
 			res.writeHead(400, {"Content-Type": "application/json"});
-			res.end(JSON.stringify({"created": false}));
+			res.end(JSON.stringify({"created": false, "reason": err}));
 		} else {
 			res.writeHead(201, {"Content-Type": "application/json"});
 			var json = JSON.stringify({"created":true});
