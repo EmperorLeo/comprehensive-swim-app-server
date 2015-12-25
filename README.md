@@ -36,8 +36,16 @@ Next (or first, if all this stuff was already installed), cd into the base direc
 
 If you just want to run the server only while you have a terminal open, cd into the base directory of the project, and type: <pre><code>npm start</code></pre>
 
-Otherwise, you might want the server to run forever.  Possibly type in: <pre><code>forever bin/www &</code></pre>
-I am not sure if the above works or not; still messing around with that.
+Otherwise, you might want the server to run forever.  Install forever:
+<pre><code>sudo npm install forever -g</code></pre>
+Possibly type in: <pre><code>forever bin/www &</code></pre>
+I am not sure if the above works or not; still messing around with that.  The following command, while wordy, definitely works.
+
+<pre><code>forever start -c "npm start" -o log.out -e log.err ./</code></pre>
+
+To stop the server, try this:
+<pre><code>forever stopall</code></pre>
+This will actually kill all processes running using the forever script, but for these purposes, I am only running one process with this script.  In the case where multiple scripts are being run, do not use that command.
 
 The server currently listens on port 3000 for connections.
 

@@ -1,4 +1,6 @@
 .DS_Store
 nohup.out
+log.err
+log.out
 /data/
 /node_modules/
