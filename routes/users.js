@@ -13,6 +13,16 @@ var notFound = function(response) {
 
 }
 
+var success = function(response) {
+	response.writeHead(200, {"Content-Type": "application/json"});
+	response.end(JSON.stringify({"success": true}));
+}
+
+var badRequest = function(response, error) {
+	response.writeHead(400, {"Content-Type": "application/json"});
+	response.end(JSON.stringify({"success": false, "reason": error}));
+}
+
 /* This should post a user on user creation */
 router.post('/', function(req, res, next) {
 
@@ -183,6 +193,48 @@ router.post('/:username/clubs', function(req, res, next) {
 	});
 
 
+
+});
+
+router.patch('/:username/clubs/:clubId', function(req, res, next) {
+
+	User.findOne({userName: req.params.username}, function(err, user) {
+
+		if(user) {
+
+			for(var i = 0; i < user.clubs.length; i++) {
+
+				var clubToModify = -1;
+				if(req.params.clubId == user.clubs[i]._id) {
+					clubToModify = i;
+					break;
+				}
+				if(clubToModify > -1) {
+					for(var field in req.body) {
+						if(field != "_id") {
+							user.clubs[i][field] = req.body[field];
+						}
+					}
+					user.save(function(err) {
+						if(err) {
+							badRequest(res, err);
+						} else {
+							success(res);
+						}
+					});
+				}
+				else {
+					res.writeHead(404, {"Content-Type": "application/json"});
+					res.end(JSON.stringify({"success": false, "reason": "Club not found."}));
+				}
+
+			}
+
+		} else {
+			notFound(res);
+		}
+
+	});
 
 });
 

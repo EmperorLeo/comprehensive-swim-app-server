@@ -50,7 +50,7 @@ router.post('/', function(req, res, next) {
 			res.end(JSON.stringify({"created": false, "reason": "Meet post did not match the required schema."}));
 		} else {
 			res.writeHead(201, {"Content-Type": "application/json"});
-			res.end(JSON.stringify({"created":true}));
+			res.end(JSON.stringify({"created":true, "id": meet._id}));
 		}
 
   });
